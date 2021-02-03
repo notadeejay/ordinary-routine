@@ -14,7 +14,7 @@ const getProducts = (request, response) => {
         throw error
       }
       response.status(200).json(results.rows)
-      console.log(result)
+      console.log(results)
     })
   }
 
