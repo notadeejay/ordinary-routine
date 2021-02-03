@@ -12,10 +12,14 @@ class ProductList extends Component {
 
   render() {
     return (
-      <div className="ProductList">
-        <h1>Products</h1>
+      <div className="product-list">
         {this.state.products.map(product =>
-          <Product key={product.id} name={product.name} />
+          <Product 
+          key={product.id} 
+          name={product.name} 
+          category={product.category}
+          targets={product.targets}
+          />
         )}
       </div>
     );
