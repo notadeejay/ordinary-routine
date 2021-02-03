@@ -18,6 +18,17 @@ const getProducts = (request, response) => {
     })
   }
 
+  const getCategories = (request, response) => {
+    pool.query('SELECT c.category_name, p.name FROM product p JOIN category c ON p.category = c.id;', (error, results) => {
+      if (error) {
+        throw error
+      }
+      response.status(200).json(results.rows)
+      console.log(results)
+    })
+  }
+
 module.exports = {
-    getProducts
+    getProducts,
+    getCategories
 }
