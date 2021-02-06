@@ -1,0 +1,15 @@
+.main__wrapper {
+    display: flex;
+}
+
+.category-list {
+    width: 300px;
+    padding: 0px 32px;
+    overflow-y: auto;
+    height: 500px;
+    
+}
+
+.routine {
+    width: 100%;
+}

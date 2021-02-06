@@ -1,30 +1,42 @@
 import React, { Component } from 'react';
 import "../styles/product.css"
+import sun from "./sun.svg"
+import moon from "./moon.svg"
+
 
 class Product extends Component {
-  state = {selected: false}
-  
 
-handleSelect() {
-        const currentState = this.state.selected
-        this.setState({ selected: !currentState });
+  
+  render() {
+    const whenToUse = () => {
+      let when = this.props.when
+      if (when.length === 2) {
+        return <React.Fragment><img classname="sun" Src={sun}></img>
+          <img classname="moon" src={moon}></img>
+        </React.Fragment>
+      } else if (this.props.when.includes("AM")) {
+        return <img classname="sun"  Src={sun}></img>
+      } else  {
+        return <img classname="moon" Src={moon}></img>
+      }
     }
 
-    render() {
     return (
-      <div className={this.state.selected ? 'product selected': "product"} onClick={this.handleSelect}>
-        <div className="product__category">
-            <p>{this.props.category}</p>
+
+      <div className="product">
+      <div className="product__details">
+        <h3 className="product__name">{this.props.name}</h3>
+          <ul className="product__targets">{this.props.targets.map((target) => {
+            return <li>{target}</li>})}
+            </ul>
+            <div className="product__ampm">
+                {whenToUse()}
+            </div>
+            </div>
+            <div className="product__learn-more">
+               <button className="button__plus"><svg height="426.66667pt" viewBox="0 0 426.66667 426.66667" width="426.66667pt" xmlns="http://www.w3.org/2000/svg"><path d="m405.332031 192h-170.664062v-170.667969c0-11.773437-9.558594-21.332031-21.335938-21.332031-11.773437 0-21.332031 9.558594-21.332031 21.332031v170.667969h-170.667969c-11.773437 0-21.332031 9.558594-21.332031 21.332031 0 11.777344 9.558594 21.335938 21.332031 21.335938h170.667969v170.664062c0 11.777344 9.558594 21.335938 21.332031 21.335938 11.777344 0 21.335938-9.558594 21.335938-21.335938v-170.664062h170.664062c11.777344 0 21.335938-9.558594 21.335938-21.335938 0-11.773437-9.558594-21.332031-21.335938-21.332031zm0 0"/></svg></button>
+            </div>
         </div>
-        <div className="product__name">
-            <h3>{this.props.name}</h3>
-        </div>
-        <ul className="product__targets">
-            {this.props.targets.map((target, index) => {
-                return <li key={index}>{target}</li>
-            })}
-        </ul>
-      </div>
     );
   }
   

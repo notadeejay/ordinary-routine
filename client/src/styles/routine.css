@@ -1,0 +1,25 @@
+.routine {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    border-left: 16px solid #EEEEEE;
+}
+.routine__morning,
+.routine__evening {
+    display:flex;
+    height: 50%;
+    width: 100%;
+}
+
+.routine__morning {
+    background: #FFFBEB;
+}
+
+.routine__evening {
+    background: #020887;
+}
+
+.routine__icon {
+    width: 40px;
+    margin: 16px;
+}

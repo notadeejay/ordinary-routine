@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import "./App.css"
-import "./components/ProductList"
-import ProductList from './components/ProductList';
+import "./styles/layout.css"
+import ProductList from "./components/ProductList"
+import CategoryList from "./components/CategoryList"
+import Routine from "./components/Routine"
 
 class App extends Component {
+
   render() {
     return (
       <div className="app">
@@ -11,7 +14,10 @@ class App extends Component {
         <h1>Build Your Skin Care Regime</h1>
         <img src="https://theordinary.deciem.com/Images/logo.svg"/>
         </div>
-        <ProductList/>
+        <div className="main__wrapper">
+          <CategoryList  />
+          <Routine />
+        </div>
       </div>
     );
   }
