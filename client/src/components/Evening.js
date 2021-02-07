@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import moon from "./white_moon.svg"
 
-class Routine extends Component {
+class Evening extends Component {
 
   render() {
     return (
@@ -13,4 +13,4 @@ class Routine extends Component {
   }
 }
 
-export default Routine;
+export default Evening;

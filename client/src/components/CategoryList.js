@@ -8,7 +8,7 @@ class CategoryList extends Component {
     const categories = ["Antioxidants", "Cleansers", "Direct Acids", "Hydrators and Oils", "More Molecules", "Peptides", "Retinoids", "Suncare", "Vitamin C"]
     return (
       <div className="category-list">
-          <CategoryListItem categories={categories} />
+          <CategoryListItem categories={categories} modal={this.props.modal} />
       </div>
     );
   }

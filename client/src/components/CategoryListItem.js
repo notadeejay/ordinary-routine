@@ -28,6 +28,7 @@ class CategoryListItem extends Component {
                           <h2 onClick={this.handleClick}>{category}</h2>
                             <ProductList
                                 products={products}
+                                modal={this.props.modal}
                             />
                           </div>
                         )

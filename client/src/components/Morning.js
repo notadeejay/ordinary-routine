@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import sun from "./sun.svg"
 
-class Routine extends Component {
+class Morning extends Component {
 
   render() {
     return (
@@ -14,4 +14,4 @@ class Routine extends Component {
   }
 }
 
-export default Routine;
+export default Morning;
