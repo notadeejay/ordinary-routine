@@ -14,6 +14,20 @@ const getProducts = (request, response) => {
         throw error
       }
       response.status(200).json(results.rows)
+      // console.log(results)
+    })
+  }
+
+
+  const getProduct = (request, response) => {
+    let productQuery=request.params.id
+    let queryString = `SELECT * FROM product WHERE id = ${productQuery}`
+
+    pool.query(`SELECT * FROM product`, (error, results) => {
+      if (error) {
+        throw error
+      }
+      response.status(200).json(results.rows)
       console.log(results)
     })
   }
@@ -24,11 +38,14 @@ const getProducts = (request, response) => {
         throw error
       }
       response.status(200).json(results.rows)
-      console.log(results)
+      // console.log(results)
     })
   }
 
+
+
 module.exports = {
     getProducts,
-    getCategories
+    getCategories,
+    getProduct
 }
