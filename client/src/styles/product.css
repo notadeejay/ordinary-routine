@@ -6,7 +6,7 @@
 .product {
     margin: 8px;
     width: 200px;
-    height: 150px;
+    height: 180px;
     border-bottom: 1.5px solid black;
     padding-bottom: 16px;
 }
@@ -40,6 +40,7 @@
 .product__targets {
     font-size: 11px;
     list-style-type: none;
+    margin-bottom: 32px;
 }
 
 .product__targets li::before{
@@ -128,3 +129,23 @@
 button > svg {
     pointer-events: none;
   }
+
+
+  .routine .product {
+      background: white;
+      border-bottom: none;
+      height: 200px
+  }
+
+  .routine .routine__products {
+   display: flex;
+   align-items: center;
+}
+
+.product__category {
+    display: none;
+}
+
+.routine .product__category {
+    display: block;
+}

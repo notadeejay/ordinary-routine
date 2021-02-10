@@ -1,7 +1,7 @@
 .routine {
     display: flex;
     flex-direction: column;
-    height: 500px;
+    height: 520px;
     border-left: 16px solid #EEEEEE;
 }
 .routine__morning,

@@ -4,7 +4,6 @@ import Product from './Product';
 class ProductList extends Component {
 
   render() {
-
     return (
       <div className="product-list hide">
         {this.props.products.map(product =>
@@ -17,6 +16,7 @@ class ProductList extends Component {
           when={product.am_pm}
           modal={this.props.modal}
           id = {product.id}
+          onRoutine={false}
           />
         )}
       </div>

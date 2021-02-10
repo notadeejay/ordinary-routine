@@ -24,6 +24,7 @@ class Product extends Component {
     return (
       <div className="product" data-id={this.props.id}>
       <div className="product__details" >
+         <span className="product__category">{this.props.category}</span>
         <h3 className="product__name">{this.props.name}</h3>
           <ul className="product__targets">{this.props.targets.map((target) => {
             return <li>{target}</li>})}

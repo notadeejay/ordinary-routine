@@ -11,15 +11,39 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {modalOpen: false, currentProduct: 0}
+    this.state = {
+      modalOpen: false, 
+      currentProduct: 0,
+      am_routine: [],
+      pm_routine: []
+    }
 
     this.modalPopup = this.modalPopup.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.getProductDetails = this.getProductDetails.bind(this);
+    this.addToRoutine = this.addToRoutine.bind(this);
 }
   
 
 
+addToRoutine (routine, product) {
+  console.log(product)
+  if (routine == "AM") {
+  this.setState(state => {
+    const am_routine = [...this.state.am_routine, product]
+    return {
+      am_routine
+    };
+  });
+} else {
+  this.setState(state => {
+    const pm_routine = [...this.state.pm_routine, product]
+    return {
+      pm_routine
+    };
+  });
+}
+}
   
   modalPopup(e) {
     let currentModalState = this.state.modalOpen
@@ -52,9 +76,16 @@ class App extends Component {
         </div>
         <div className="main__wrapper">
           <CategoryList modal={this.getProductDetails} />
-          <Routine />
+          <div className="routine">
+          <Routine className="routine__morning" routine={this.state.am_routine}/>
+          <Routine className="routine__evening" routine={this.state.pm_routine}/>
+          </div>
           {this.state.modalOpen &&
-          <ProductModal productId={this.state.currentProduct} open={this.state.modalOpen} close={this.closeModal}/>}
+          <ProductModal 
+            productId={this.state.currentProduct} 
+            open={this.state.modalOpen} 
+            close={this.closeModal}
+            addToRoutine={this.addToRoutine}/>}
         </div>
       </div>
     );
