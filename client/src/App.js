@@ -59,7 +59,7 @@ addToRoutine (routine, product) {
   }
 
   getProductDetails(e) {
-    let productDiv = e.target.parentElement.parentElement
+    let productDiv = e.target.parentElement
     // let productName = productDiv.firstElementChild.firstChild.innerText
     const productID = productDiv.getAttribute("data-id");
     this.setState({currentProduct: productID})
@@ -67,7 +67,6 @@ addToRoutine (routine, product) {
   }
 
   render() {
-    console.log(this.state.currentProduct)
     return (
       <div className="app">
         <div className="app__header">
