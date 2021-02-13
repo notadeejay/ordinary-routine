@@ -37,18 +37,21 @@
     border-right: none;
 }
 
-.product__targets {
+.product__targets,
+.product__use {
     font-size: 11px;
     list-style-type: none;
     margin-bottom: 32px;
 }
 
-.product__targets li::before{
+.product__targets li::before,
+.product__use li::before {
     content: "\2014";
     margin-right: 8px;
 }
 
-.product__targets li {
+.product__targets li
+.product__use li {
     margin-bottom: 8px;
 }
 
@@ -111,6 +114,8 @@
     box-shadow: 10px 10px 0px 5px #DD7373;;
     border-radius: 4px;
     padding: 16px 32px;
+    overflow-y: auto;
+    font-size: 14px;
 }
 
 .product-modal__backdrop {
@@ -148,4 +153,68 @@ button > svg {
 
 .routine .product__category {
     display: block;
+}
+
+
+.add__evening,
+.add__morning {
+   border: none;
+   background: none;
+   min-width: 119px;
+   padding: 12px 24px;
+   font-family: 'Raleway', sans-serif;
+   font-weight: 800;
+   border: 1.5px solid black;
+   border-radius: 4px;
+}
+
+.add__morning {
+   background: #FFFBEB;
+}
+
+.add__evening {
+    background: #020887;
+    color: white;
+}
+
+.routine-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    min-height: 80px;
+}
+
+.additional-details {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.additional-details ul {
+    padding: 0;
+}
+
+.additional-details div {
+    padding: 12px;
+    width: 45%;
+}
+
+.additional-details p {
+    font-weight: 700;
+}
+
+.additional-details li {
+    font-size: 14px;
+}
+
+.routine__morning .product,
+.routine__evening .product {
+    border: 2px solid black;
+    border-radius: 4px;
+}
+
+.product-modal .product__category {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 32px;
 }
