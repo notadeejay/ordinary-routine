@@ -17,7 +17,8 @@ Created using `create-react-app`
 To start:
 
 Open a terminal window and enter the following commands
-```cd client
+```
+cd client
 npm start
 ```
  
